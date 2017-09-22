@@ -22,7 +22,7 @@ public class StudentChooser
 
 	private static void importRoster() throws IOException
 		{
-		System.out.println("Please choose the class.");
+		System.out.println("Which class is presenting?");
 		System.out.println("(1) AP  (2) Java");
 		Scanner userInput = new Scanner (System.in);
 		int period = userInput.nextInt();
@@ -57,7 +57,7 @@ public class StudentChooser
 	private static void takeVolunteer()
 		{	
 		System.out.println();
-		System.out.println("Select the student volunteer or type \"0\" to choose a random student.");
+		System.out.println("Select the volunteer or type \"0\" to choose a random student.");
 		Scanner userInput = new Scanner (System.in);
 		int volunteer = userInput.nextInt();
 		if (volunteer != 0)
