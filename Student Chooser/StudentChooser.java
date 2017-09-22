@@ -85,5 +85,6 @@ public class StudentChooser
 			String fakeVariable = fake.nextLine(); 
 			}
 		System.out.println("That's everyone - thank you!");
+		System.exit(0);
 		}
 	}
