@@ -15,6 +15,7 @@ public class StudentChooser
 		while(areVolunteering)
 			{
 			takeVolunteer();
+			displayRoster();
 			}
 		chooseStudent();
 		}
@@ -24,12 +25,12 @@ public class StudentChooser
 		System.out.println("Please choose the class.");
 		System.out.println("(1) AP  (2) Java");
 		Scanner userInput = new Scanner (System.in);
-		int edition = userInput.nextInt();
-		if (edition == 1)
+		int period = userInput.nextInt();
+		if (period == 1)
 			{
 			file = new Scanner(new File("AP_2017-18.txt"));
 			}
-		else if (edition == 2)
+		else if (period == 2)
 			{
 			file = new Scanner(new File("Java_2017-18_tri1.txt"));
 			}
@@ -38,17 +39,38 @@ public class StudentChooser
 			System.out.println("Sorry, but you must choose either (1) or (2)");
 			takeVolunteer();
 			}
-		
+		while (file.hasNext())
+			{
+			studentRoster.add(file.nextLine());
+			}
+		displayRoster();
+		}
+	
+	private static void displayRoster()
+		{
+		for(int i = 0; i < studentRoster.size(); i++)
+			{
+			System.out.println((i + 1) + ")  " + studentRoster.get(i));
+			}
 		}
 
 	private static void takeVolunteer()
 		{	
-		System.out.println("Select the student volunteer.");
+		System.out.println();
+		System.out.println("Select the student volunteer or type \"0\" to choose a random student.");
 		Scanner userInput = new Scanner (System.in);
 		int volunteer = userInput.nextInt();
-		System.out.println("Let's look at the code of " + 
-				studentRoster.get(volunteer - 1) + ".");
-		studentRoster.remove(volunteer - 1);
+		if (volunteer != 0)
+			{
+			System.out.println("Let's look at the code of " + 
+					studentRoster.get(volunteer - 1) + ".");
+			System.out.println();
+			studentRoster.remove(volunteer - 1);	
+			}
+		else
+			{
+			chooseStudent();
+			}
 		}
 
 	private static void chooseStudent()
@@ -62,5 +84,6 @@ public class StudentChooser
 			Scanner fake = new Scanner(System.in);
 			String fakeVariable = fake.nextLine(); 
 			}
+		System.out.println("That's everyone - thank you!");
 		}
 	}
