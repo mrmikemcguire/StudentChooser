@@ -17,7 +17,6 @@ public class StudentChooser
 			takeVolunteer();
 			displayRoster();
 			}
-		chooseStudent();
 		}
 
 	private static void importRoster() throws IOException
@@ -28,16 +27,17 @@ public class StudentChooser
 		int period = userInput.nextInt();
 		if (period == 1)
 			{
-			file = new Scanner(new File("AP_2017-18.txt"));
+			file = new Scanner(new File("AP_2018_19.txt"));
 			}
 		else if (period == 2)
 			{
-			file = new Scanner(new File("Java_2017-18_tri1.txt"));
+			file = new Scanner(new File("Java_2018-19_tri1.txt"));
 			}
 		else
 			{
 			System.out.println("Sorry, but you must choose either (1) or (2)");
-			takeVolunteer();
+			System.out.println();
+			importRoster();
 			}
 		while (file.hasNext())
 			{
