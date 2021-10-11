@@ -11,12 +11,14 @@ public class StudentChooser
 	public static void main(String[] args) throws IOException
 		{
 		importRoster();
+		displayRoster();
 		boolean areVolunteering = true;
 		while(areVolunteering)
 			{
 			takeVolunteer();
 			displayRoster();
 			}
+		chooseStudent();
 		}
 
 	private static void importRoster() throws IOException
@@ -27,11 +29,11 @@ public class StudentChooser
 		int period = userInput.nextInt();
 		if (period == 1)
 			{
-			file = new Scanner(new File("AP_2018_19.txt"));
+			file = new Scanner(new File("AP_2021-22.txt"));
 			}
 		else if (period == 2)
 			{
-			file = new Scanner(new File("Java_2018-19_tri1.txt"));
+			file = new Scanner(new File("Java_2021-22_tri1.txt"));
 			}
 		else
 			{
@@ -43,7 +45,6 @@ public class StudentChooser
 			{
 			studentRoster.add(file.nextLine());
 			}
-		displayRoster();
 		}
 	
 	private static void displayRoster()
