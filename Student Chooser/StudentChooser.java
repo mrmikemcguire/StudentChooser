@@ -29,11 +29,11 @@ public class StudentChooser
 		int period = userInput.nextInt();
 		if (period == 1)
 			{
-			file = new Scanner(new File("AP_2021-22.txt"));
+			file = new Scanner(new File("AP_2022_23.txt"));
 			}
 		else if (period == 2)
 			{
-			file = new Scanner(new File("Java_2021-22_tri1.txt"));
+			file = new Scanner(new File("Java_2022_23_tri1.txt"));
 			}
 		else
 			{
